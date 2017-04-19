@@ -4,11 +4,12 @@ import java.util.List;
 public class Checker{
 
     public static Boolean hasLetter(String userInput, String randomCapital){
-        Boolean haveLetter = new Boolean(false);
+
+        Boolean hasLetter = new Boolean(false);
         if (randomCapital.indexOf(userInput) >= 0){
-            haveLetter = true;
+            hasLetter = true;
         }
-        return haveLetter;
+        return hasLetter;
     }
 
     public static Boolean isCorrectAnswer(String userInput, String randomCapital){
