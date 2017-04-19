@@ -16,27 +16,47 @@ public class Printer{
              i < text.length;
              i++) {
             System.out.println(text[i]);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         };
     }
 
     public static void howToPlayText()
         throws InterruptedException {
             String text [] = {
-                "Your job is to guess the capital of an European Country",
+                "Your job is to guess the capital of an European Country.",
                 "Seems easy, doesn't it?",
                 "Let's see how smart you are!",
-                "Ready?",
+                "Ready?" ,
+                " "};
+
+        for (int i = 0;
+             i < text.length;
+             i++) {
+            System.out.println(text[i]);
+            Thread.sleep(1000);
+        };
+    }
+    public static void whatYouWantToGuess()
+        throws InterruptedException {
+            String text [] = {
+                "What do you want to guess?",
+                "1. Letter.",
+                "2. Whole word.",
+                "3. Help, I want to quit the game NOW.",
+                "",
                 };
 
         for (int i = 0;
              i < text.length;
              i++) {
             System.out.println(text[i]);
-            Thread.sleep(2000);
-        };
+            };
     }
 
-
+    public static void simplePrint(String message)
+        throws InterruptedException {
+            System.out.println(message);
+            // System.out.println("\n");
+    }
 
 }

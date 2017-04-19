@@ -17,8 +17,9 @@ public class Game{
     public void addToList(String userInput){
         usedLettersList.add(userInput);
     }
-
-
+    public String getCapital(){
+        return currentCapital;
+    }
     public static void main(String[] args) {
         // Game n = new Game();
         // System.out.println(n.currentCapital);

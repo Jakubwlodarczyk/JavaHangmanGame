@@ -6,11 +6,9 @@ public class Converter{
         return dashed;
     }
 
-    public static String converToLetter(String capital, Integer indexNumber, String letter){
-        StringBuilder myName = new StringBuilder("domanokz");
-        myName.setCharAt(4, 'x');
-        char c = letter.charAt(0);
+    public static String convertToLetter(String capital, Integer indexNumber, String letter){
         StringBuilder converted = new StringBuilder(capital);
+        char c = letter.charAt(0);
         converted.setCharAt(indexNumber, c);
         return converted.toString();
     }
