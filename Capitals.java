@@ -1,4 +1,3 @@
-package hangman;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +25,6 @@ public class Capitals{
     public static String getRandomCapital(List<String> capitalsList) {
         String randomCapital = capitalsList.get(new Random().nextInt(capitalsList.size()));
         return randomCapital;
-
-    }
-
-    public static void main(String[] args) {
-        List<String> capitals = capitalsList();
-        String random = getRandomCapital(capitals);
-        System.out.println(random);
-
 
     }
 }
