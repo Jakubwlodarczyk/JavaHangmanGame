@@ -33,4 +33,11 @@ public class PlayerInput{
        catch(Exception e) {}
 }
 
+public static String playAgain(){
+    Scanner reader = new Scanner(System.in);
+    System.out.println("Wanna play again? 'Y' to play again.");
+    String word = reader.next();
+    return word.toUpperCase();
+}
+
 }
