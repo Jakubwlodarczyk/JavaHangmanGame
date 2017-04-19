@@ -1,14 +1,15 @@
-package hangman;
-
+import java.util.Random;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 
 public class Capitals{
 
-    public static ArrayList<String> capitalsList(){
+    public static List<String> capitalsList(){
 
-        List<String> capitalsList = new ArrayList<String>();
-        List capitalsList = {"TIRANA", "ANDORRA LA VELLA", "YEREVAN", "VIENNA",
+        List<String> capitalsList = new ArrayList<String>(Arrays.asList("TIRANA",
+                        "ANDORRA LA VELLA", "YEREVAN", "VIENNA",
                         "BAKU", "MINSK", "BRUSSELS", "SARAJEVO", "SOFIA",
                         "ZAGREB", "NICOSIA", "PRAGUE", "COPENHAGEN", "TALLINN",
                         "HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS",
@@ -18,12 +19,20 @@ public class Capitals{
                         "AMSTERDAM", "OSLO", "WARSAW", "LISBON", "BUCHAREST",
                         "MOSCOW", "SAN MARINO", "BELGRADE", "BRATISLAVA",
                         "LJUBLJANA", "MADRID", "STOCKHOLM", "BERN", "ANKARA",
-                        "KYIV", "LONDON", "VATICAN CITY"};
+                        "KYIV", "LONDON", "VATICAN CITY"));
         return capitalsList;
     }
 
+    public static String getRandomCapital(List<String> capitalsList) {
+        String randomCapital = capitalsList.get(new Random().nextInt(capitalsList.size()));
+        return randomCapital;
+
+    }
+
     public static void main(String[] args) {
-        System.out.println(capitalsList());
+        List<String> capitals = capitalsList();
+        String random = getRandomCapital(capitals);
+        System.out.println(random);
 
     }
 }
