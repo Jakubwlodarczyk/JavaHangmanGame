@@ -8,14 +8,14 @@ public class PlayerInput{
         String input = reader.next();
         Character ch = input.charAt(0);
         String character = ch.toString();
-        return character;
+        return character.toUpperCase();
     }
 
     public static String getWord(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter whole word: ");
         String word = reader.next();
-        return word;
+        return word.toUpperCase();
     }
 
     public static void pressAnyKeyToContinue() {
