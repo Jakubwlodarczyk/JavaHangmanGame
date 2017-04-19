@@ -6,7 +6,7 @@ public class Converter{
         return dashed;
     }
 
-    
+
 
     public static void main(String[] args) {
 
