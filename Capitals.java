@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Capitals{
 
-    public static List<String> capitalsList(){
+    public static List<String> getCapitalsList(){
 
         List<String> capitalsList = new ArrayList<String>(Arrays.asList("TIRANA",
                         "ANDORRA LA VELLA", "YEREVAN", "VIENNA",
@@ -29,10 +29,4 @@ public class Capitals{
 
     }
 
-    public static void main(String[] args) {
-        List<String> capitals = capitalsList();
-        String random = getRandomCapital(capitals);
-        System.out.println(random);
-
-    }
 }
