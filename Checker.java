@@ -1,7 +1,7 @@
 
 public class Checker{
 
-    public static Boolean haveLetter(String userInput, String randomCapital){
+    public static Boolean hasLetter(String userInput, String randomCapital){
         Boolean haveLetter = new Boolean(false);
         if (randomCapital.indexOf(userInput) >= 0){
             haveLetter = true;
