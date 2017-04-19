@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class PlayerInput{
 
+    public static String choice(){
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        String input = reader.next();
+        return input;
+    }
+
     public static String getLetter(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a character: ");
@@ -18,8 +25,8 @@ public class PlayerInput{
         return word.toUpperCase();
     }
 
-    public static void pressAnyKeyToContinue() {
-       System.out.println("Press any key to continue.");
+    public static void pressEnterToContinue() {
+       System.out.println("Press enter to continue.");
        try {
            System.in.read();
        }
