@@ -8,10 +8,10 @@ public class Hangman{
             PlayerInput.pressAnyKeyToContinue();
         }
     public static void gameLogic(){
-        // tutaj sie wszystko rozgrywa
-        // stworzyć obiekt gry
-        // storzyć obiekt stolicy itd
+        Game newGame = new Game();
+
     }
+    
     public static void main(String[] args)
         throws InterruptedException{
             welcome();
