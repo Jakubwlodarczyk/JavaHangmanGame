@@ -2,19 +2,28 @@ import java.util.Scanner;
 
 public class PlayerInput{
 
-    public static char getLetter(){
+    public static String getLetter(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a character: ");
         String input = reader.next();
-        char character = input.charAt(0);
-        return character;
+        Character ch = input.charAt(0);
+        String character = ch.toString();
+        return character.toUpperCase();
     }
 
     public static String getWord(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter whole word: ");
         String word = reader.next();
-        return word;
+        return word.toUpperCase();
     }
+
+    public static void pressAnyKeyToContinue() {
+       System.out.println("Press any key to continue.");
+       try {
+           System.in.read();
+       }
+       catch(Exception e) {}
+}
 
 }
