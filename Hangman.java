@@ -1,5 +1,6 @@
 
 public class Hangman{
+
     public static void welcome()
         throws InterruptedException {
             Printer.introText();
@@ -9,10 +10,12 @@ public class Hangman{
 
     public static void gameLogic()
         throws InterruptedException{
+
         Game newGame = new Game();
         Player player = new Player();
         String capital = Converter.convertToDash(newGame.getCapital());
         boolean isGame = true;
+
         while (isGame && player.getLife() > 0){
             Printer.simplePrint("Your capital is:");
             Printer.simplePrint(capital);
@@ -22,6 +25,7 @@ public class Hangman{
             Printer.simplePrint(player.getLife().toString());
             Printer.whatYouWantToGuess();
             String choice = PlayerInput.choice();
+
             if (choice.equals("1")){
                 String letter = PlayerInput.getLetter();
                 newGame.addToList(letter);
@@ -35,23 +39,60 @@ public class Hangman{
                     player.changeLife(-1);
                 }
 
-
             } else if (choice.equals("2")){
                 String word = PlayerInput.getWord();
+                boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
+                if (success){
+                    win(isGame);
+                } else {
+                    player.changeLife(-1);
+                }
 
             } else if (choice.equals ("3")){
-                System.exit(0);
-            } else { Printer.simplePrint("Invalid input, you moron.");}
+                exit();
 
-        }
-
+            } else {
+                Printer.simplePrint("Invalid input, you moron.");
+            }
     }
 
+        if (player.getLife() <= 0){
+            lose(isGame);
+        }
+    }
+
+    public static void win(boolean isGame)
+        throws InterruptedException {
+            Printer.simplePrint("Yay! You have won! Congratulations!");
+            isGame = false;
+    }
+
+    public static void lose(boolean isGame)
+        throws InterruptedException {
+            Printer.simplePrint("Booooo, you have lost!");
+            isGame = false;
+    }
+
+    public static void playAgain()
+        throws InterruptedException {
+        String answer = PlayerInput.playAgain();
+        if (answer.equals("Y")){
+            gameLogic();
+        } else {
+            exit();
+            }
+    }
+
+    public static void exit()
+        throws InterruptedException {
+            Printer.simplePrint("If you enjoyed using our program, please support further development by donating 10 000$");
+            System.exit(0);
+        }
+
     public static void main(String[] args)
-        throws InterruptedException{
+        throws InterruptedException {
             // welcome();
             gameLogic();
-
-
+            playAgain();
     }
 }
