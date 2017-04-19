@@ -22,7 +22,8 @@ public class Capitals{
         return capitalsList;
     }
 
-    public static String getRandomCapital(List<String> capitalsList) {
+    public static String getRandomCapital() {
+        List<String> capitalsList = getCapitalsList();
         String randomCapital = capitalsList.get(new Random().nextInt(capitalsList.size()));
         return randomCapital;
 
