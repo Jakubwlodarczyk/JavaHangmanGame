@@ -7,8 +7,8 @@ public class Capitals{
 
     public static ArrayList<String> capitalsList(){
 
-        List<String> capitalsList = new ArrayList<String>;
-        capitalsList = ["TIRANA", "ANDORRA LA VELLA", "YEREVAN", "VIENNA",
+        List<String> capitalsList = new ArrayList<String>();
+        List capitalsList = {"TIRANA", "ANDORRA LA VELLA", "YEREVAN", "VIENNA",
                         "BAKU", "MINSK", "BRUSSELS", "SARAJEVO", "SOFIA",
                         "ZAGREB", "NICOSIA", "PRAGUE", "COPENHAGEN", "TALLINN",
                         "HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS",
@@ -18,11 +18,12 @@ public class Capitals{
                         "AMSTERDAM", "OSLO", "WARSAW", "LISBON", "BUCHAREST",
                         "MOSCOW", "SAN MARINO", "BELGRADE", "BRATISLAVA",
                         "LJUBLJANA", "MADRID", "STOCKHOLM", "BERN", "ANKARA",
-                        "KYIV", "LONDON", "VATICAN CITY"];
+                        "KYIV", "LONDON", "VATICAN CITY"};
         return capitalsList;
     }
 
     public static void main(String[] args) {
+        System.out.println(capitalsList());
 
     }
 }
