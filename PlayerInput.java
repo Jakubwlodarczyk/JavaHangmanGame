@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class PlayerInput{
 
-    public static char getLetter(){
+    public static String getLetter(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a character: ");
         String input = reader.next();
-        char character = input.charAt(0);
+        Character ch = input.charAt(0);
+        String character = ch.toString();
         return character;
     }
 
@@ -16,5 +17,13 @@ public class PlayerInput{
         String word = reader.next();
         return word;
     }
+
+    public static void pressAnyKeyToContinue() {
+       System.out.println("Press any key to continue.");
+       try {
+           System.in.read();
+       }
+       catch(Exception e) {}
+}
 
 }
