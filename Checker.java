@@ -37,6 +37,16 @@ public class Checker{
         return true;
     }
 
+    public static Boolean isNumeric(String str){
+        try {
+            Double d = Double.parseDouble(str);
+        }
+        catch(NumberFormatException nfe){
+            return false;
+        }
+        return true;
+        }
+
     public static void main(String[] args) {
 
     }

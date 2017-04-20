@@ -19,7 +19,7 @@ public class Hangman{
         while (isGame && player.getLife() > 0){
             System.out.println("Capital to guess: " + capital);
             System.out.println("Used letters: " + newGame.getList());
-            System.out.println("Your lives: " + player.getLife() );
+            System.out.println("Your lives: " + player.getLife());
             Printer.whatYouWantToGuess();
             String choice = PlayerInput.choice();
 
@@ -27,24 +27,29 @@ public class Hangman{
             if (choice.equals("1")){
                 String letter = PlayerInput.getLetter();
                 Printer.clear();
-                if (Checker.isOk(letter, newGame.getList())){
-                    newGame.addToList(letter);
-                    boolean success = Checker.hasLetter(letter, newGame.getCapital());
-                    if (success){
-                        int[] indexes = Checker.listOfIndexes(letter, newGame.getCapital());
-                        for (Integer index : indexes) {
-                            capital = Converter.convertToLetter(capital, index, letter);
-                        }
-                        if (capital.equals(newGame.getCapital())){
-                            Printer.simplePrint("Yay! You have won! Congratulations!");
-                            break;
+                if (!Checker.isNumeric(letter)){
+                    if (Checker.isOk(letter, newGame.getList())){
+                        newGame.addToList(letter);
+                        boolean success = Checker.hasLetter(letter, newGame.getCapital());
+                        if (success){
+                            int[] indexes = Checker.listOfIndexes(letter, newGame.getCapital());
+                            for (Integer index : indexes) {
+                                capital = Converter.convertToLetter(capital, index, letter);
+                            }
+                            if (capital.equals(newGame.getCapital())){
+                                Printer.simplePrint("Yay! You have won! Congratulations!");
+                                break;
+                            }
+                        } else {
+                            player.changeLife(-1);
                         }
                     } else {
-                        player.changeLife(-1);
+                        Printer.simplePrint("You have already typed this letter!");
                     }
                 } else {
-                    Printer.simplePrint("You have already typed this letter!");
+                    Printer.simplePrint("Type a letter, IDIOT!!");
                 }
+
 
 
             } else if (choice.equals("2")){
