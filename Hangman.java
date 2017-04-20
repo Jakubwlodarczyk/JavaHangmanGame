@@ -14,9 +14,8 @@ public class Hangman {
         Game newGame = new Game();
         Player player = new Player();
         String capital = Converter.convertToDash(newGame.getCapital());
-        boolean isGame = true;
 
-        while (isGame && player.getLife() > 0){
+        while (player.getLife() > 0){
             System.out.println("Capital to guess: " + capital);
             System.out.println("Used letters: " + newGame.getList());
             System.out.println("Your lives: " + player.getLife());
