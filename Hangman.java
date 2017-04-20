@@ -35,6 +35,10 @@ public class Hangman{
                     for (Integer index : indexes) {
                         capital = Converter.convertToLetter(capital, index, letter);
                     }
+                    if (capital.equals(newGame.getCapital())){
+                        Printer.simplePrint("Yay! You have won! Congratulations!");
+                        break;                        
+                    }
                 } else {
                     player.changeLife(-1);
                 }
