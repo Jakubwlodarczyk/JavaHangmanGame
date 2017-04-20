@@ -1,22 +1,33 @@
+/**
+ * Represents a player in game.
+ */
 public class Player {
     private Integer life;
 
-    public Player(){
+    /**
+    * Class constructor.
+    * Creates new Player with fixed number of 5 lives.
+    */
+    public Player() {
         this.life = 5;
     }
-    public Player(Integer life){
-        this.setLife(life);
-    }
-
-    public void setLife(Integer life){
+    /**
+    * Class constructor specifying number of lives .
+    Creates new Player with given number of lives.
+    */
+    public Player(Integer life) {
         this.life = life;
     }
 
-    public void changeLife(Integer point){
+    public void setLife(Integer life) {
+        this.life = life;
+    }
+
+    public void changeLife(Integer point) {
         this.life +=  point;
     }
 
-    public Integer getLife(){
-            return life;
+    public Integer getLife() {
+            return this.life;
     }
 }
