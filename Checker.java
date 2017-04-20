@@ -1,5 +1,6 @@
 import java.util.stream.IntStream;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Checker{
 
@@ -23,6 +24,17 @@ public class Checker{
                                  .filter(i -> randomCapital.charAt(i) == key)
                                  .toArray();
         return listOfIndexes;
+    }
+
+    public static Boolean isOk(String letter, ArrayList<String> usedLettersList){
+        if (usedLettersList.size() > 0 ){
+            for(String character : usedLettersList){
+                if (character.trim().contains(letter)){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
