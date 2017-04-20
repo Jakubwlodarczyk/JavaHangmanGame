@@ -20,9 +20,4 @@ public class Game{
     public String getCapital(){
         return currentCapital;
     }
-    public static void main(String[] args) {
-        // Game n = new Game();
-        // System.out.println(n.currentCapital);
-
-    }
 }

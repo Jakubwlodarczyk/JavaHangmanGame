@@ -3,6 +3,10 @@ public class Converter{
     public static String convertToDash(String randomCapital){
         String dashed;
         dashed = new String(new char[randomCapital.length()]).replace("\0", "_");
+        int[] listOfIndexes = Checker.listOfIndexes(" ", randomCapital);
+        for (Integer index : listOfIndexes){
+            dashed = convertToLetter(dashed, index, " ");
+        }
         return dashed;
     }
 
