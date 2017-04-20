@@ -1,6 +1,8 @@
 import java.util.stream.IntStream;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class Checker {
 
@@ -46,4 +48,18 @@ public class Checker {
         }
         return true;
         }
+
+    public static Boolean containsSpecialChar(String input){
+
+        Pattern pattern = Pattern.compile("[^\\w\\d\\s]");
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            return true;
+
+} return false;
+    }
+    
+    public static void main(String[] args) {
+        containsSpecialChar("Nana  ana");
+    }
 }
