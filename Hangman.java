@@ -43,7 +43,8 @@ public class Hangman{
                 String word = PlayerInput.getWord();
                 boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
                 if (success){
-                    win(isGame);
+                    Printer.simplePrint("Yay! You have won! Congratulations!");
+                    break;
                 } else {
                     player.changeLife(-1);
                 }
@@ -57,20 +58,8 @@ public class Hangman{
     }
 
         if (player.getLife() <= 0){
-            lose(isGame);
-        }
-    }
-
-    public static void win(boolean isGame)
-        throws InterruptedException {
-            Printer.simplePrint("Yay! You have won! Congratulations!");
-            isGame = false;
-    }
-
-    public static void lose(boolean isGame)
-        throws InterruptedException {
             Printer.simplePrint("Booooo, you have lost!");
-            isGame = false;
+        }
     }
 
     public static void playAgain()
