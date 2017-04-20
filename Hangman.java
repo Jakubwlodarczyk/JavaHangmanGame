@@ -29,7 +29,7 @@ public class Hangman {
                 if (!Checker.isNumeric(letter)){
                     if (Checker.isOk(letter, newGame.getList())){
                         newGame.addToList(letter);
-                        boolean success = Checker.hasLetter(letter, newGame.getCapital());
+                        Boolean success = Checker.hasLetter(letter, newGame.getCapital());
                         if (success){
                             int[] indexes = Checker.listOfIndexes(letter, newGame.getCapital());
                             for (Integer index : indexes) {
@@ -53,7 +53,7 @@ public class Hangman {
 
             } else if (choice.equals("2")){
                 String word = PlayerInput.getWord();
-                boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
+                Boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
                 if (success){
                     Printer.simplePrint("Yay! You have won! Congratulations!");
                     break;
