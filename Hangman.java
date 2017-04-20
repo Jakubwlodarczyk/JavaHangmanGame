@@ -46,19 +46,24 @@ public class Hangman {
                         Printer.simplePrint("You have already typed this letter!");
                     }
                 } else {
-                    Printer.simplePrint("Type a letter, IDIOT!!");
+                    Printer.simplePrint("Wrong input! Try again.");
                 }
 
 
 
             } else if (choice.equals("2")){
                 String word = PlayerInput.getWord();
-                Boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
-                if (success){
-                    Printer.simplePrint("Yay! You have won! Congratulations!");
-                    break;
+                if (!Checker.isNumeric(word)){
+                    Boolean success = Checker.isCorrectAnswer(word, newGame.getCapital());
+                    if (success){
+                        Printer.simplePrint("Yay! You have won! Congratulations!");
+                        break;
+                    } else {
+                        Printer.simplePrint("That's not a correct answer! Try again.");
+                        player.changeLife(-1);
+                    }
                 } else {
-                    player.changeLife(-1);
+                    Printer.simplePrint("Wrong input! Try again.");
                 }
 
             } else if (choice.equals ("3")){
@@ -71,6 +76,7 @@ public class Hangman {
 
         if (player.getLife() <= 0){
             Printer.simplePrint("Booooo, you have lost!");
+            playAgain();
         }
     }
 
