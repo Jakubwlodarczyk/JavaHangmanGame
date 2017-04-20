@@ -2,6 +2,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Printer{
 
+    public static void clear() {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
+
     public static void introText()
         throws InterruptedException {
             String text [] = {
@@ -11,13 +16,13 @@ public class Printer{
                 "Let's play then!",
                 "Because that's why we're here, right?"
             };
-
+        clear();
         for (int i = 0;
              i < text.length;
              i++) {
             System.out.println(text[i]);
             Thread.sleep(1000);
-        };
+            };
     }
 
     public static void howToPlayText()
@@ -28,7 +33,7 @@ public class Printer{
                 "Let's see how smart you are!",
                 "Ready?" ,
                 " "};
-
+        clear();
         for (int i = 0;
              i < text.length;
              i++) {
@@ -39,6 +44,7 @@ public class Printer{
     public static void whatYouWantToGuess()
         throws InterruptedException {
             String text [] = {
+                "",
                 "What do you want to guess?",
                 "1. Letter.",
                 "2. Whole word.",
@@ -55,8 +61,9 @@ public class Printer{
 
     public static void simplePrint(String message)
         throws InterruptedException {
+            clear();
             System.out.println(message);
-            // System.out.println("\n");
+            System.out.println("\n");
     }
 
 }

@@ -17,17 +17,17 @@ public class Hangman{
         boolean isGame = true;
 
         while (isGame && player.getLife() > 0){
-            Printer.simplePrint("Your capital is:");
-            Printer.simplePrint(capital);
-            Printer.simplePrint("Used letters: ");
-            System.out.println(newGame.getList());
-            Printer.simplePrint("Your lives:");
-            Printer.simplePrint(player.getLife().toString());
+            System.out.println("Capital to guess: " + capital);
+            System.out.println("Used letters: " + newGame.getList());
+            System.out.println("Your lives: " + player.getLife() );
+            // Printer.simplePrint(player.getLife().toString());
             Printer.whatYouWantToGuess();
             String choice = PlayerInput.choice();
 
+
             if (choice.equals("1")){
                 String letter = PlayerInput.getLetter();
+                Printer.clear();
                 newGame.addToList(letter);
                 boolean success = Checker.hasLetter(letter, newGame.getCapital());
                 if (success){
@@ -37,7 +37,7 @@ public class Hangman{
                     }
                     if (capital.equals(newGame.getCapital())){
                         Printer.simplePrint("Yay! You have won! Congratulations!");
-                        break;                        
+                        break;
                     }
                 } else {
                     player.changeLife(-1);
