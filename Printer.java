@@ -1,6 +1,6 @@
 import java.util.concurrent.TimeUnit;
 
-public class Printer{
+public class Printer {
 
     public static void clear() {
             System.out.print("\033[H\033[2J");

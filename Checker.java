@@ -2,7 +2,7 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Checker{
+public class Checker {
 
     public static Boolean hasLetter(String userInput, String randomCapital){
 
@@ -37,7 +37,13 @@ public class Checker{
         return true;
     }
 
-    public static void main(String[] args) {
-
-    }
+    public static Boolean isNumeric(String str){
+        try {
+            Double d = Double.parseDouble(str);
+        }
+        catch(NumberFormatException nfe){
+            return false;
+        }
+        return true;
+        }
 }

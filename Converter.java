@@ -1,8 +1,12 @@
-public class Converter{
+public class Converter {
 
     public static String convertToDash(String randomCapital){
         String dashed;
         dashed = new String(new char[randomCapital.length()]).replace("\0", "_");
+        int[] listOfIndexes = Checker.listOfIndexes(" ", randomCapital);
+        for (Integer index : listOfIndexes){
+            dashed = convertToLetter(dashed, index, " ");
+        }
         return dashed;
     }
 
@@ -12,10 +16,4 @@ public class Converter{
         converted.setCharAt(indexNumber, c);
         return converted.toString();
     }
-
-    public static void main(String[] args) {
-
-        }
-
-
 }
