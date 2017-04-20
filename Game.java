@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class Game{
+public class Game {
     public ArrayList<String> usedLettersList;
     public String currentCapital;
 

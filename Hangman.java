@@ -1,5 +1,5 @@
 
-public class Hangman{
+public class Hangman {
 
     public static void welcome()
         throws InterruptedException {

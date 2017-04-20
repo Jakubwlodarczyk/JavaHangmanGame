@@ -1,4 +1,4 @@
-public class Converter{
+public class Converter {
 
     public static String convertToDash(String randomCapital){
         String dashed;
@@ -16,10 +16,4 @@ public class Converter{
         converted.setCharAt(indexNumber, c);
         return converted.toString();
     }
-
-    public static void main(String[] args) {
-
-        }
-
-
 }

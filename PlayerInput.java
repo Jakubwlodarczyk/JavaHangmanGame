@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PlayerInput{
+public class PlayerInput {
 
     public static String choice(){
         Scanner reader = new Scanner(System.in);
