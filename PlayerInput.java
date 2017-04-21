@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class PlayerInput {
     /**
-     * Gets the user input for logic choice
+     * Gets the user input of numbers for logic choice purposes.
+     * @ return String
      */
     public static String choice(){
         Scanner reader = new Scanner(System.in);
@@ -10,8 +11,10 @@ public class PlayerInput {
         String input = reader.next();
         return input;
     }
+
     /**
-     * Gets the user input of a single a letter
+     * Gets the user input of a single a letter.
+     * @ return String converted to uppercase.
      */
     public static String getLetter(){
         Scanner reader = new Scanner(System.in);
@@ -21,8 +24,10 @@ public class PlayerInput {
         String character = ch.toString();
         return character.toUpperCase();
     }
+
     /**
-     * Gets the user input of a whole word
+     * Gets the user input of a whole word.
+     * @ return String converted to uppercase.
      */
     public static String getWord(){
         Scanner reader = new Scanner(System.in);
@@ -39,6 +44,10 @@ public class PlayerInput {
        catch(Exception e) {}
 }
 
+/**
+ * Gets the user input of wheather he wants to play the game again or not.
+ * @ return String converted to uppercase.
+ */
 public static String playAgain(){
     Scanner reader = new Scanner(System.in);
     System.out.println("Wanna play again? 'Y' to play again.");
