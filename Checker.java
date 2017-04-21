@@ -24,8 +24,8 @@ public class Checker {
     public static Boolean isCorrectAnswer(String userInput, String randomCapital){
         return randomCapital.equals(userInput);
     }
-    /**
-     * Czo to robi to ja nie wiem
+    /*
+      Return list of indexes of string found in other string.
      */
     public static int[] listOfIndexes(String userInput, String randomCapital){
         final char key = userInput.charAt(0);

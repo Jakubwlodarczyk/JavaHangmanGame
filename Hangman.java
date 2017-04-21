@@ -6,7 +6,8 @@ public class Hangman {
     /**
      * Controlls methods responsible for printing
      * text introduction to Game into console.
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
+     * @ throws InterruptedException if thread is interrupted, either before
+     * or during the activity of sleeping
      */
     public static void welcome()
         throws InterruptedException {
@@ -17,10 +18,11 @@ public class Hangman {
 
     /**
      * Controlls the actual game algorithm.
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
+     * @ throws InterruptedException if thread is interrupted, either before
+     * or during the activity of sleeping
      */
     public static void gameLogic()
-        throws InterruptedException{
+        throws InterruptedException {
 
         Game newGame = new Game();
         Player player = new Player();
@@ -37,7 +39,8 @@ public class Hangman {
             if (choice.equals("1")){
                 String letter = PlayerInput.getLetter();
                 Printer.clear();
-                //user input is first checked for containing any numbers or special characters
+                //user input is first checked for containing any numbers or
+                //special characters
                 if (!Checker.isNumeric(letter) && !Checker.containsSpecialChar(letter)){
                     //user input is checked for already being in list of used letters
                     if (Checker.isOk(letter, newGame.getList())){
@@ -111,6 +114,9 @@ public class Hangman {
             }
     }
 
+    /**
+    * Stops the program, and leaves the message for user.
+    */
     public static void exit()
         throws InterruptedException {
             Printer.simplePrint("If you enjoyed using our program, please support further development by donating 10 000$");
