@@ -5,8 +5,8 @@
 public class Hangman {
     /**
      * Controlls methods responsible for printing
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
      * text introduction to Game into console.
+     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
      */
     public static void welcome()
         throws InterruptedException {
@@ -14,6 +14,7 @@ public class Hangman {
             PlayerInput.pressEnterToContinue();
             Printer.howToPlayText();
         }
+
     /**
      * Controlls the actual game algorithm.
      * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
@@ -97,8 +98,8 @@ public class Hangman {
     }
 
     /**
-     * Lets the player to play the game once more after finishing
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
+     * Lets the player to play the game once more after finishing the first round.
+     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping.
      */
     public static void playAgain()
         throws InterruptedException {
@@ -116,9 +117,13 @@ public class Hangman {
             System.exit(0);
         }
 
+    /**
+     * Controlls methods responsible for running the actual game.
+     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping.
+     */
     public static void main(String[] args)
         throws InterruptedException {
-            // welcome();
+            welcome();
             gameLogic();
             playAgain();
     }
