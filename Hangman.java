@@ -56,7 +56,7 @@ public class Hangman {
                             if (capital.equals(newGame.getCapital())){
                                 Printer.simplePrint("Yay! You have won! Congratulations!");
                                 System.out.println(Printer.ANSI_GREEN + "Correct answer is:");
-                                System.out.println(capital + Printer.ANSI_RESET);
+                                System.out.println(newGame.getCapital() + Printer.ANSI_RESET);
                                 break;
                             }
                         } else {
@@ -78,7 +78,7 @@ public class Hangman {
                     if (isCorrect){
                         Printer.simplePrint("Yay! You have won! Congratulations!");
                         System.out.println(Printer.ANSI_GREEN + "Correct answer is:");
-                        System.out.println(capital + Printer.ANSI_RESET);
+                        System.out.println(capital + newGame.getCapital());
                         break;
                     } else {
                         Printer.warningMessage("Nah, not the correct answer OBVIOUSLY. Try again.");
