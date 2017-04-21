@@ -13,7 +13,7 @@ public class Player {
     }
     /**
     * Class constructor specifying number of lives .
-    Creates new Player with given number of lives.
+    * Creates new Player with given number of lives.
     */
     public Player(Integer life) {
         this.life = life;
