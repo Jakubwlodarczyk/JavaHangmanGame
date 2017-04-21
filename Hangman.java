@@ -5,7 +5,8 @@
 public class Hangman {
     /**
      * Controlls methods responsible for printing
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
+     * @ throws InterruptedException if thread is interrupted, either before or
+     during the activity of sleeping
      * text introduction to Game into console.
      */
     public static void welcome()
@@ -14,9 +15,11 @@ public class Hangman {
             PlayerInput.pressEnterToContinue();
             Printer.howToPlayText();
         }
+
     /**
      * Controlls the actual game algorithm.
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
+     * @ throws InterruptedException if thread is interrupted, either before or
+     during the activity of sleeping
      */
     public static void gameLogic()
         throws InterruptedException{
@@ -36,7 +39,8 @@ public class Hangman {
             if (choice.equals("1")){
                 String letter = PlayerInput.getLetter();
                 Printer.clear();
-                //user input is first checked for containing any numbers or special characters
+                //user input is first checked for containing any numbers or
+                //special characters
                 if (!Checker.isNumeric(letter) && !Checker.containsSpecialChar(letter)){
                     //user input is checked for already being in list of used letters
                     if (Checker.isOk(letter, newGame.getList())){
@@ -110,9 +114,13 @@ public class Hangman {
             }
     }
 
+    /**
+    * Stops the program, and leaves the message for user.
+    */
     public static void exit()
         throws InterruptedException {
-            Printer.simplePrint("If you enjoyed using our program, please support further development by donating 10 000$");
+            Printer.simplePrint("If you enjoyed using our program, please support
+            further development by donating 10 000$");
             System.exit(0);
         }
 
