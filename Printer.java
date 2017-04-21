@@ -1,7 +1,12 @@
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Handles displaying String messages to console.
+ */
 public class Printer {
-
+    /**
+     * Clears the screen.
+     */
     public static void clear() {
             System.out.print("\033[H\033[2J");
             System.out.flush();
@@ -41,6 +46,7 @@ public class Printer {
             Thread.sleep(1000);
         };
     }
+    
     public static void whatYouWantToGuess()
         throws InterruptedException {
             String text [] = {
@@ -59,11 +65,15 @@ public class Printer {
             };
     }
 
+    /**
+     * Prints given message to console.
+     * @ param String message to be displayed.
+     * throws InterruptedException if thread is interrupted, either before or during the activity of sleeping.
+     */
     public static void simplePrint(String message)
         throws InterruptedException {
             clear();
             System.out.println(message);
             System.out.println("\n");
     }
-
 }
