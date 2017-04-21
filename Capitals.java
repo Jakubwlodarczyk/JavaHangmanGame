@@ -11,15 +11,7 @@ public class Capitals {
     */
     public static List<String> getCapitalsList(){
 
-        List<String> capitalsList = new ArrayList<String>(Arrays.asList("TIRANA",
-            "ANDORRA LA VELLA", "YEREVAN", "VIENNA", "BAKU", "MINSK", "BRUSSELS",
-            "SARAJEVO", "SOFIA", "ZAGREB", "NICOSIA", "PRAGUE", "COPENHAGEN",
-            "TALLINN", "HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS",
-            "BUDAPEST", "REYKJAVIK", "DUBLIN", "ROME", "ASTANA", "PRISTINA", "RIGA",
-            "VADUZ", "VILNIUS", "LUXEMBOURG", "SKOPJE", "VALLETTA", "CHISINAU", "MONACO",
-            "PODGORICA", "AMSTERDAM", "OSLO", "WARSAW", "LISBON", "BUCHAREST", "MOSCOW",
-            "SAN MARINO", "BELGRADE", "BRATISLAVA", "LJUBLJANA", "MADRID", "STOCKHOLM",
-            "BERN", "ANKARA", "KYIV", "LONDON", "VATICAN CITY"));
+        List<String> capitalsList = new ArrayList<String>(Arrays.asList("VATICAN CITY"));
         return capitalsList;
     }
 

@@ -78,7 +78,7 @@ public class Hangman {
                     if (isCorrect){
                         Printer.simplePrint("Yay! You have won! Congratulations!");
                         System.out.println(Printer.ANSI_GREEN + "Correct answer is:");
-                        System.out.println(newGame.getCapital());
+                        System.out.println(newGame.getCapital() + Printer.ANSI_RESET);
                         break;
                     } else {
                         Printer.warningMessage("Nah, not the correct answer OBVIOUSLY. Try again.");
@@ -130,7 +130,7 @@ public class Hangman {
 
     public static void main(String[] args)
         throws InterruptedException {
-            welcome();
+            // welcome();
             gameLogic();
             playAgain();
     }

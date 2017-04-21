@@ -32,7 +32,7 @@ public class PlayerInput {
     public static String getWord(){
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter whole word: ");
-        String word = reader.next();
+        String word = reader.nextLine();
         return word.toUpperCase();
     }
 
