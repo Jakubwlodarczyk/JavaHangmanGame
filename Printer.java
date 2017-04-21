@@ -38,15 +38,17 @@ public class Printer {
                 "Let's see how smart you are!",
                 "Ready?" ,
                 " "};
-        clear();
+
         for (int i = 0;
              i < text.length;
              i++) {
             System.out.println(text[i]);
             Thread.sleep(1000);
         };
+        PlayerInput.pressEnterToContinue();
+        clear();
     }
-    
+
     public static void whatYouWantToGuess()
         throws InterruptedException {
             String text [] = {
