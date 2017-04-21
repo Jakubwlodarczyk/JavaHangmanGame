@@ -5,9 +5,9 @@
 public class Hangman {
     /**
      * Controlls methods responsible for printing
+     * @ throws InterruptedException if thread is interrupted, either before or
+     during the activity of sleeping
      * text introduction to Game into console.
-     * @ throws InterruptedException if thread is interrupted, either before
-     * or during the activity of sleeping
      */
     public static void welcome()
         throws InterruptedException {
@@ -18,11 +18,11 @@ public class Hangman {
 
     /**
      * Controlls the actual game algorithm.
-     * @ throws InterruptedException if thread is interrupted, either before
-     * or during the activity of sleeping
+     * @ throws InterruptedException if thread is interrupted, either before or
+     during the activity of sleeping
      */
     public static void gameLogic()
-        throws InterruptedException {
+        throws InterruptedException{
 
         Game newGame = new Game();
         Player player = new Player();
@@ -30,8 +30,8 @@ public class Hangman {
 
         while (player.getLife() > 0){
             System.out.println("Capital to guess: " + capital);
-            System.out.println("Used letters: " + newGame.getList());
-            System.out.println("Your lives: " + player.getLife());
+            System.out.println("Used letters: " + Printer.ANSI_YELLOW +newGame.getList() + Printer.ANSI_RESET);
+            System.out.println(Printer.ANSI_CYAN + "Your lives: " + player.getLife() + Printer.ANSI_RESET);
             Printer.whatYouWantToGuess();
             String choice = PlayerInput.choice();
 
@@ -55,17 +55,19 @@ public class Hangman {
                             //checking if all letters of word are guessed
                             if (capital.equals(newGame.getCapital())){
                                 Printer.simplePrint("Yay! You have won! Congratulations!");
+                                System.out.println(Printer.ANSI_GREEN + "Correct answer is:");
+                                System.out.println(capital + Printer.ANSI_RESET);
                                 break;
                             }
                         } else {
-                            Printer.simplePrint("Nah, that's not it. Try again. You lose 1 life though.");
+                            Printer.warningMessage("Nah, that's not it. Try again. You lose 1 life though.");
                             player.changeLife(-1);
                         }
                     } else {
-                        Printer.simplePrint("Looks like you have already typed this letter!");
+                        Printer.warningMessage("Looks like you have already typed this letter!");
                     }
                 } else {
-                    Printer.simplePrint("Wrong input! Try again.");
+                    Printer.warningMessage("Wrong input! Try again.");
                 }
 
             //handles  the logic after choosing by user to guess a whole word
@@ -75,25 +77,27 @@ public class Hangman {
                     Boolean isCorrect = Checker.isCorrectAnswer(word, newGame.getCapital());
                     if (isCorrect){
                         Printer.simplePrint("Yay! You have won! Congratulations!");
+                        System.out.println(Printer.ANSI_GREEN + "Correct answer is:");
+                        System.out.println(capital + Printer.ANSI_RESET);
                         break;
                     } else {
-                        Printer.simplePrint("Nah, not the correct answer OBVIOUSLY. Try again.");
+                        Printer.warningMessage("Nah, not the correct answer OBVIOUSLY. Try again.");
                         player.changeLife(-1);
                     }
                 } else {
-                    Printer.simplePrint("Wrong input! Try again.");
+                    Printer.warningMessage("Wrong input! Try again.");
                 }
-            //handles  the logic after choosing by user to exit the program
-            } else if (choice.equals ("3")){
-                exit();
+            //handles  the log
 
             } else {
-                Printer.simplePrint("Invalid input, you moron.");
+                Printer.warningMessage("Invalid input, you moron.");
             }
     }
 
         if (player.getLife() <= 0){
-            Printer.simplePrint("Booooo, you have lost!");
+            Printer.warningMessage("Booooo, you have lost!");
+            System.out.println("Correct answer is:");
+            System.out.println(Printer.ANSI_RED + newGame.getCapital() + Printer.ANSI_RESET);
             System.out.println("You're not the brightest star on the sky, are you?");
             System.out.println("Let's hope you're pretty.");
             playAgain();
@@ -101,13 +105,14 @@ public class Hangman {
     }
 
     /**
-     * Lets the player to play the game once more after finishing the first round.
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping.
+     * Lets the player to play the game once more after finishing
+     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping
      */
     public static void playAgain()
         throws InterruptedException {
         String answer = PlayerInput.playAgain();
         if (answer.equals("Y")){
+            Printer.clear();
             gameLogic();
         } else {
             exit();
@@ -123,10 +128,6 @@ public class Hangman {
             System.exit(0);
         }
 
-    /**
-     * Controlls methods responsible for running the actual game.
-     * @ throws InterruptedException if thread is interrupted, either before or during the activity of sleeping.
-     */
     public static void main(String[] args)
         throws InterruptedException {
             welcome();
